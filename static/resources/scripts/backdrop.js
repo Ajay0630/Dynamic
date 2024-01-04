@@ -1,6 +1,8 @@
 
 'use strict';
 
+var coooolor = false;
+
 const canvas = document.getElementsByTagName('canvas')[0];
 canvas.width = canvas.clientWidth;
 canvas.height = canvas.clientHeight;
@@ -643,7 +645,14 @@ canvas.addEventListener('touchmove', e => {
 
 canvas.addEventListener('mousemove', () => {
   pointers[0].down = true;
-  pointers[0].color = [Math.random() + 0.2, Math.random() + 0.2, Math.random() + 0.2];
+  coooolor = false;
+  if (coooolor = true){
+    pointers[0].color = [207,180,59];
+    coooolor = false;
+  } else if (coooolor = false){
+    pointers[0].color = [2.2,0.2,0.6];
+    coooolor = true;
+  }
 });
 
 canvas.addEventListener('touchstart', e => {
@@ -657,7 +666,7 @@ canvas.addEventListener('touchstart', e => {
     pointers[i].down = true;
     pointers[i].x = touches[i].pageX;
     pointers[i].y = touches[i].pageY;
-    pointers[i].color = [Math.random() + 0.2, Math.random() + 0.2, Math.random() + 0.2];
+    pointers[i].color = [20,2.5,3];
   }
 });
 
